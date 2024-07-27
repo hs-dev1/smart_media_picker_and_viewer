@@ -1,5 +1,17 @@
 # Changelog
 
+
+
+## [0.0.2] - 2024-07-27
+### Fixed Issues and Improvements
+- **Documentation**: Improved package documentation to provide better guidance and usage examples.
+- **Platform Support**: Verified and updated platform support details.
+- **Static Analysis**: Addressed issues identified by static analysis tools to improve code quality and maintainability.
+- **Dependency Updates**: Updated dependencies to their latest compatible versions to ensure better compatibility and stability.
+- **Follow Dart File Conventions**: Made changes to adhere to Dart file conventions.
+
+
+
 ## [0.0.1] - 2024-07-27
 ### Initial Release
 - **Created**: Initial release of the `smart_media_picker_and_viewer` package.
