@@ -5,10 +5,10 @@ A versatile Flutter package for seamlessly picking and viewing various media typ
 
 ## Features
 
-- **Media Picker**: Easily pick files, images, and documents with a customizable UI.
-- **Media Viewer**: View images and PDF files within your app with built-in support.
-- **Customizable**: Adjust styles, colors, and other UI elements to fit your application's design.
-- **Flexible**: Supports a wide range of file types and provides various options for display and interaction. 
+- Media Picker: Easily pick files, images, and documents with a customizable UI.
+- Media Viewer: View images and PDF files within your app with built-in support.
+- Customizable: Adjust styles, colors, and other UI elements to fit your application's design.
+- Flexible Supports: wide range of file types and provides various options for display and interations.
 
 ## Installation
 
