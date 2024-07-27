@@ -31,7 +31,8 @@ class PackageView extends StatefulWidget {
 }
 
 class _PackageViewState extends State<PackageView> {
-  List<File> bankStatementList = [];
+  List<File> documentList = [];
+  List<File> bankStatementList = [File("pdf")];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +65,7 @@ class _PackageViewState extends State<PackageView> {
             ),
             const SizedBox(height: 12),
             SmartMediaPickerAndViewer(
-              list: bankStatementList,
+              list: documentList,
               isHideUploadButton: false,
               uploadButtonColor: Colors.blueGrey,
               // uploadButtonIcon: const Icon(Icons.upload, color: Colors.black),
@@ -80,7 +81,40 @@ class _PackageViewState extends State<PackageView> {
               mediaHeight: 80,
               mediaWidth: 60,
               onSelect: (list) {
-                bankStatementList = list;
+                documentList = list;
+              },
+            ),
+            const Divider(),
+            const Text(
+              "here you can pass your doc list and view",
+              textAlign: TextAlign.start,
+              style: TextStyle(color: Colors.black, fontSize: 15, height: 1.2),
+            ),
+            const Text(
+              "Your Documents",
+              textAlign: TextAlign.start,
+              style: TextStyle(color: Colors.black, fontSize: 15, height: 1.2),
+            ),
+            const SizedBox(height: 12),
+            SmartMediaPickerAndViewer(
+              list: bankStatementList,
+              isHideUploadButton: true,
+              // uploadButtonColor: Colors.blueGrey,
+              // // uploadButtonIcon: const Icon(Icons.upload, color: Colors.black),
+              // uploadButtonTextStyle: const TextStyle(fontSize: 8, fontStyle: FontStyle.italic, color: Colors.blueGrey),
+              // mediaTextStyle: const TextStyle(fontSize: 8, fontStyle: FontStyle.italic, color: Colors.blueGrey),
+              // removeIconColor: Colors.red,
+              // removeIconSize: 20,
+              // // removeIcon: const Icon(Icons.cancel, color: Colors.red,size: 12,),
+              // // removeIconPositionLR8(tb):
+              // buttonHeight: 80,
+              // buttonWidth: 60,
+              // buttonPadding: 0,
+              mediaHeight: 80,
+              mediaWidth: 60,
+              maxLinesForName: 3,
+              onSelect: (list) {
+                documentList = list;
               },
             ),
           ],

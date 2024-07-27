@@ -5,7 +5,6 @@ import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-
 import 'package:image_picker/image_picker.dart';
 import 'src/image_slider.dart';
 import 'src/image_view.dart';
@@ -29,11 +28,12 @@ class SmartMediaPickerAndViewer extends StatefulWidget {
   final double? mediaWidth;
   final double? buttonPadding;
   final double? removeIconSize;
+  final int? maxLinesForName;
 
   SmartMediaPickerAndViewer({
     Key? key,
     required this.list,
-    required this.isHideUploadButton,
+    this.isHideUploadButton = false,
     required this.onSelect,
     this.uploadButtonColor,
     this.uploadButtonTextStyle,
@@ -47,6 +47,7 @@ class SmartMediaPickerAndViewer extends StatefulWidget {
     this.mediaHeight,
     this.mediaWidth,
     this.removeIconSize,
+    this.maxLinesForName = 1,
   }) : super(key: key);
 
   @override
@@ -156,13 +157,10 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
                       InkWell(
                         onTap: () async {
                           String fileType = list[index].path.split('.').last.toString();
-                          // debugPrint(fileType.camelCase);
                           (fileType == FileTypeEnum.jpg.name || fileType == FileTypeEnum.jpeg.name || fileType == FileTypeEnum.png.name)
                               ? showDialog(context: context, builder: (context) => ImageSlider(index: index, sliderList: list))
                               : (fileType == FileTypeEnum.pdf.name)
-                                  ?
-                                  // Get.to(() => PDFViewWidget(path: list[index].path, isForSubmit: false))
-                                  Navigator.push(
+                                  ? Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) => PDFViewWidget(path: list[index].path, isForSubmit: false),
@@ -235,30 +233,18 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
                                   ),
                                 ],
                               ),
-                        // Container(
-                        //     margin: const EdgeInsets.only(top: 5, left: 5, right: 5),
-                        //     width: widget.mediaWidth ?? MediaQuery.of(context).size.width * .15,
-                        //     height: widget.mediaHeight ?? MediaQuery.of(context).size.width * .15,
-                        //     decoration: BoxDecoration(
-                        //         image: DecorationImage(
-                        //             image: AssetImage(
-                        //               (list[index].path.split('.').last.toString() == FileTypeEnum.pdf.name)
-                        //                   ? pdf
-                        //                   : (list[index].path.split('.').last.toString() == FileTypeEnum.xls.name || list[index].path.split('.').last.toString() == FileTypeEnum.xlsx.name)
-                        //                       ? xls
-                        //                       : doc,
-                        //             ),
-                        //             fit: BoxFit.cover),
-                        //         borderRadius: BorderRadius.circular(8)),
-                        //   ),
                       ),
                       const SizedBox(height: 12),
-                      Text(
-                        "${list[index].path.split('/').last.length >= 5 ? list[index].path.split('/').last.substring(0, 5) : list[index].path.split('/').last}.${list[index].path.split('.').last}",
-                        style: widget.mediaTextStyle ??
-                            const TextStyle(
-                              color: Colors.black,
-                            ),
+                      SizedBox(
+                        width: widget.mediaWidth ?? MediaQuery.of(context).size.width * .15,
+                        child: Text(
+                          "${list[index].path.split('/').last.length >= 5 ? list[index].path.split('/').last.substring(0, 5) : list[index].path.split('/').last}.${list[index].path.split('.').last}",
+                          maxLines: widget.maxLinesForName,
+                          style: widget.mediaTextStyle ??
+                              const TextStyle(
+                                color: Colors.black,
+                              ),
+                        ),
                       )
                     ],
                   ),
