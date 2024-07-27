@@ -4,7 +4,7 @@ version: 0.0.1
 homepage: https://github.com/hs-dev1/smart_media_picker_and_viewer/tree/main
 
 environment:
-  sdk: '>=3.4.3 <4.0.0'
+  sdk: ">=3.4.3 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -22,4 +22,12 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^3.0.0
 
+
 flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.smart_media_picker_and_viewer
+        pluginClass: SmartMediaPickerAndViewerPlugin
+      ios:
+        pluginClass: SmartMediaPickerAndViewerPlugin
