@@ -99,7 +99,7 @@
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///Users/muhammadhussnain/.pub-cache/hosted/pub.dev/flutter_lints-3.0.2",
+      "rootUri": "file:///Users/muhammadhussnain/.pub-cache/hosted/pub.dev/flutter_lints-4.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
@@ -111,7 +111,7 @@
     },
     {
       "name": "flutter_plugin_android_lifecycle",
-      "rootUri": "file:///Users/muhammadhussnain/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.20",
+      "rootUri": "file:///Users/muhammadhussnain/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.21",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -147,7 +147,7 @@
     },
     {
       "name": "image_picker_android",
-      "rootUri": "file:///Users/muhammadhussnain/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+7",
+      "rootUri": "file:///Users/muhammadhussnain/.pub-cache/hosted/pub.dev/image_picker_android-0.8.12+8",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -207,9 +207,9 @@
     },
     {
       "name": "lints",
-      "rootUri": "file:///Users/muhammadhussnain/.pub-cache/hosted/pub.dev/lints-3.0.0",
+      "rootUri": "file:///Users/muhammadhussnain/.pub-cache/hosted/pub.dev/lints-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.1"
     },
     {
       "name": "matcher",
@@ -344,7 +344,7 @@
       "languageVersion": "3.4"
     }
   ],
-  "generated": "2024-07-27T12:26:32.927771Z",
+  "generated": "2024-07-27T13:22:32.227052Z",
   "generator": "pub",
   "generatorVersion": "3.4.4",
   "flutterRoot": "file:///Users/muhammadhussnain/Desktop/flutter",

@@ -1,4 +1,4 @@
-```markdown
+
 # Smart Media Picker and Viewer
 
 A versatile Flutter package for seamlessly picking and viewing various media types including images, PDFs, and other files. This package provides customizable widgets to enhance the media handling experience in your Flutter applications.
