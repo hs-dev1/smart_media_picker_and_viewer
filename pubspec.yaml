@@ -1,7 +1,10 @@
 name: smart_media_picker_and_viewer
-description: "A versatile Flutter package for seamlessly picking and viewing various media types. Includes customizable widgets for selecting files, images, and PDFs with support for a rich user experience."
+description: "A versatile Flutter package for picking and viewing various media types."
 version: 0.0.1
-homepage: https://github.com/hs-dev1/smart_media_picker_and_viewer/tree/main
+homepage: https://github.com/hs-dev1/smart_media_picker_and_viewer
+repository: https://github.com/hs-dev1/smart_media_picker_and_viewer
+
+
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
