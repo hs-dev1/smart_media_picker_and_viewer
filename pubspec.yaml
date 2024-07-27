@@ -34,6 +34,6 @@ platforms:
   ios:
 
 topics:
-  - image_picker
-  - file_picker
-  - view_files
+  - image-picker
+  - file-picker
+  - view-files
