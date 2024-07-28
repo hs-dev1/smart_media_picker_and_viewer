@@ -27,7 +27,8 @@ class PDFViewWidget extends StatefulWidget {
 }
 
 class _PDFScreenState extends State<PDFViewWidget> with WidgetsBindingObserver {
-  final Completer<PDFViewController> _controller = Completer<PDFViewController>();
+  final Completer<PDFViewController> _controller =
+      Completer<PDFViewController>();
   int? pages = 0;
   int? currentPage = 0;
   bool isReady = false;
@@ -48,9 +49,13 @@ class _PDFScreenState extends State<PDFViewWidget> with WidgetsBindingObserver {
               leading: InkWell(
                 // onTap: () => Get.back(result: false),
                 onTap: () => Navigator.pop(context, true),
-                child: const Icon(Icons.arrow_back_rounded, color: Colors.black),
+                child:
+                    const Icon(Icons.arrow_back_rounded, color: Colors.black),
               ),
-              title: Text(widget.path.split('/').last.substring(0, widget.path.split('/').last.lastIndexOf('.')), style: const TextStyle(color: Colors.black, fontSize: 14)),
+              title: Text(
+                  widget.path.split('/').last.substring(
+                      0, widget.path.split('/').last.lastIndexOf('.')),
+                  style: const TextStyle(color: Colors.black, fontSize: 14)),
             ),
             body: Padding(
               padding: const EdgeInsets.all(10),
@@ -68,7 +73,8 @@ class _PDFScreenState extends State<PDFViewWidget> with WidgetsBindingObserver {
                           pageSnap: true,
                           defaultPage: currentPage!,
                           fitPolicy: FitPolicy.BOTH,
-                          preventLinkNavigation: false, // if set to true the link is handled in flutter
+                          preventLinkNavigation:
+                              false, // if set to true the link is handled in flutter
                           onRender: (_pages) {
                             setState(() {
                               pages = _pages;
@@ -101,7 +107,9 @@ class _PDFScreenState extends State<PDFViewWidget> with WidgetsBindingObserver {
                           },
                         ),
                         if (errorMessage.isEmpty)
-                          !isReady ? const Center(child: CircularProgressIndicator()) : Container()
+                          !isReady
+                              ? const Center(child: CircularProgressIndicator())
+                              : Container()
                         else
                           Center(
                             child: Text(errorMessage),
@@ -115,7 +123,8 @@ class _PDFScreenState extends State<PDFViewWidget> with WidgetsBindingObserver {
                       height: MediaQuery.of(context).size.height * .07,
                       color: Colors.white,
                       width: MediaQuery.of(context).size.width,
-                      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 4),
                       child: AppButton(
                         buttonTitle: "Submit",
                         color: widget.buttonColor ?? Colors.teal.shade400,
@@ -145,7 +154,8 @@ class _PDFScreenState extends State<PDFViewWidget> with WidgetsBindingObserver {
           Container(
             height: 7,
             width: 7,
-            decoration: BoxDecoration(color: Colors.teal.shade400, shape: BoxShape.circle),
+            decoration: BoxDecoration(
+                color: Colors.teal.shade400, shape: BoxShape.circle),
           ),
           const SizedBox(width: 10),
           Text(

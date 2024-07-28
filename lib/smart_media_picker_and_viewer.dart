@@ -51,7 +51,8 @@ class SmartMediaPickerAndViewer extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _SmartMediaPickerAndViewerState createState() => _SmartMediaPickerAndViewerState();
+  _SmartMediaPickerAndViewerState createState() =>
+      _SmartMediaPickerAndViewerState();
 }
 
 class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
@@ -126,20 +127,27 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
               child: Column(
                 children: [
                   Container(
-                    width: widget.buttonWidth ?? MediaQuery.of(context).size.width * .15,
-                    height: widget.buttonHeight ?? MediaQuery.of(context).size.width * .15,
+                    width: widget.buttonWidth ??
+                        MediaQuery.of(context).size.width * .15,
+                    height: widget.buttonHeight ??
+                        MediaQuery.of(context).size.width * .15,
                     padding: EdgeInsets.all(widget.buttonPadding ?? 15),
                     decoration: BoxDecoration(
-                      border: Border.all(color: widget.uploadButtonColor ?? Colors.blueGrey),
+                      border: Border.all(
+                          color: widget.uploadButtonColor ?? Colors.blueGrey),
                       borderRadius: BorderRadius.circular(8.0),
                       color: Colors.transparent,
                     ),
-                    child: widget.uploadButtonIcon ?? Icon(Icons.upload, color: widget.uploadButtonColor ?? Colors.blueGrey),
+                    child: widget.uploadButtonIcon ??
+                        Icon(Icons.upload,
+                            color: widget.uploadButtonColor ?? Colors.blueGrey),
                   ),
                   const SizedBox(height: 12),
                   Text(
                     "Upload",
-                    style: widget.uploadButtonTextStyle ?? TextStyle(color: widget.uploadButtonColor ?? Colors.black),
+                    style: widget.uploadButtonTextStyle ??
+                        TextStyle(
+                            color: widget.uploadButtonColor ?? Colors.black),
                   )
                 ],
               ),
@@ -156,27 +164,43 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
                     children: [
                       InkWell(
                         onTap: () async {
-                          String fileType = list[index].path.split('.').last.toString();
-                          (fileType == FileTypeEnum.jpg.name || fileType == FileTypeEnum.jpeg.name || fileType == FileTypeEnum.png.name)
-                              ? showDialog(context: context, builder: (context) => ImageSlider(index: index, sliderList: list))
+                          String fileType =
+                              list[index].path.split('.').last.toString();
+                          (fileType == FileTypeEnum.jpg.name ||
+                                  fileType == FileTypeEnum.jpeg.name ||
+                                  fileType == FileTypeEnum.png.name)
+                              ? showDialog(
+                                  context: context,
+                                  builder: (context) => ImageSlider(
+                                      index: index, sliderList: list))
                               : (fileType == FileTypeEnum.pdf.name)
                                   ? Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => PDFViewWidget(path: list[index].path, isForSubmit: false),
+                                        builder: (context) => PDFViewWidget(
+                                            path: list[index].path,
+                                            isForSubmit: false),
                                       ),
                                     )
                                   : await OpenFile.open(list[index].path);
                         },
-                        child: (list[index].path.split('.').last.toString() == FileTypeEnum.jpg.name ||
-                                list[index].path.split('.').last.toString() == FileTypeEnum.jpeg.name ||
-                                list[index].path.split('.').last.toString() == FileTypeEnum.png.name)
+                        child: (list[index].path.split('.').last.toString() ==
+                                    FileTypeEnum.jpg.name ||
+                                list[index].path.split('.').last.toString() ==
+                                    FileTypeEnum.jpeg.name ||
+                                list[index].path.split('.').last.toString() ==
+                                    FileTypeEnum.png.name)
                             ? Container(
-                                margin: const EdgeInsets.only(top: 5, left: 5, right: 2),
-                                width: widget.mediaWidth ?? MediaQuery.of(context).size.width * .15,
-                                height: widget.mediaHeight ?? MediaQuery.of(context).size.width * .15,
+                                margin: const EdgeInsets.only(
+                                    top: 5, left: 5, right: 2),
+                                width: widget.mediaWidth ??
+                                    MediaQuery.of(context).size.width * .15,
+                                height: widget.mediaHeight ??
+                                    MediaQuery.of(context).size.width * .15,
                                 decoration: BoxDecoration(
-                                  image: DecorationImage(image: FileImage(list[index]), fit: BoxFit.cover),
+                                  image: DecorationImage(
+                                      image: FileImage(list[index]),
+                                      fit: BoxFit.cover),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                               )
@@ -184,16 +208,36 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
                                 alignment: Alignment.topRight,
                                 children: [
                                   Container(
-                                    margin: const EdgeInsets.only(top: 5, left: 5, right: 5),
-                                    width: widget.mediaWidth ?? MediaQuery.of(context).size.width * .15,
-                                    height: widget.mediaHeight ?? MediaQuery.of(context).size.width * .15,
+                                    margin: const EdgeInsets.only(
+                                        top: 5, left: 5, right: 5),
+                                    width: widget.mediaWidth ??
+                                        MediaQuery.of(context).size.width * .15,
+                                    height: widget.mediaHeight ??
+                                        MediaQuery.of(context).size.width * .15,
                                     decoration: BoxDecoration(
-                                      color: (list[index].path.split('.').last.toString() == FileTypeEnum.pdf.name)
+                                      color: (list[index]
+                                                  .path
+                                                  .split('.')
+                                                  .last
+                                                  .toString() ==
+                                              FileTypeEnum.pdf.name)
                                           ? Colors.red
-                                          : (list[index].path.split('.').last.toString() == FileTypeEnum.xls.name || list[index].path.split('.').last.toString() == FileTypeEnum.xlsx.name)
+                                          : (list[index]
+                                                          .path
+                                                          .split('.')
+                                                          .last
+                                                          .toString() ==
+                                                      FileTypeEnum.xls.name ||
+                                                  list[index]
+                                                          .path
+                                                          .split('.')
+                                                          .last
+                                                          .toString() ==
+                                                      FileTypeEnum.xlsx.name)
                                               ? Colors.green
                                               : Colors.blue,
-                                      border: Border.all(color: Colors.white, width: .4),
+                                      border: Border.all(
+                                          color: Colors.white, width: .4),
                                       borderRadius: const BorderRadius.only(
                                         topRight: Radius.elliptical(22, 22),
                                         bottomLeft: Radius.circular(8),
@@ -205,9 +249,27 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
                                       margin: const EdgeInsets.only(top: 20),
                                       child: Center(
                                         child: Text(
-                                          (list[index].path.split('.').last.toString() == FileTypeEnum.pdf.name)
+                                          (list[index]
+                                                      .path
+                                                      .split('.')
+                                                      .last
+                                                      .toString() ==
+                                                  FileTypeEnum.pdf.name)
                                               ? "pdf"
-                                              : (list[index].path.split('.').last.toString() == FileTypeEnum.xls.name || list[index].path.split('.').last.toString() == FileTypeEnum.xlsx.name)
+                                              : (list[index]
+                                                              .path
+                                                              .split('.')
+                                                              .last
+                                                              .toString() ==
+                                                          FileTypeEnum
+                                                              .xls.name ||
+                                                      list[index]
+                                                              .path
+                                                              .split('.')
+                                                              .last
+                                                              .toString() ==
+                                                          FileTypeEnum
+                                                              .xlsx.name)
                                                   ? "xlsx"
                                                   : "doc",
                                           style: const TextStyle(
@@ -220,12 +282,14 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
                                     ),
                                   ),
                                   Container(
-                                    margin: const EdgeInsets.only(top: 5, left: 5, right: 5),
+                                    margin: const EdgeInsets.only(
+                                        top: 5, left: 5, right: 5),
                                     height: 22,
                                     width: 22,
                                     decoration: BoxDecoration(
                                         color: Colors.white54,
-                                        border: Border.all(color: Colors.white, width: 3),
+                                        border: Border.all(
+                                            color: Colors.white, width: 3),
                                         borderRadius: const BorderRadius.only(
                                           topRight: Radius.elliptical(99, 99),
                                           bottomLeft: Radius.circular(12),
@@ -236,7 +300,8 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
                       ),
                       const SizedBox(height: 12),
                       SizedBox(
-                        width: widget.mediaWidth ?? MediaQuery.of(context).size.width * .15,
+                        width: widget.mediaWidth ??
+                            MediaQuery.of(context).size.width * .15,
                         child: Text(
                           "${list[index].path.split('/').last.length >= 5 ? list[index].path.split('/').last.substring(0, 5) : list[index].path.split('/').last}.${list[index].path.split('.').last}",
                           maxLines: widget.maxLinesForName,
@@ -260,8 +325,14 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
                               Container(
                                   height: widget.removeIconSize ?? 20,
                                   width: widget.removeIconSize ?? 20,
-                                  decoration: BoxDecoration(color: widget.removeIconColor ?? Colors.blueGrey, shape: BoxShape.circle),
-                                  child: Center(child: Icon(Icons.close, color: Colors.white, size: widget.removeIconSize ?? 14))),
+                                  decoration: BoxDecoration(
+                                      color: widget.removeIconColor ??
+                                          Colors.blueGrey,
+                                      shape: BoxShape.circle),
+                                  child: Center(
+                                      child: Icon(Icons.close,
+                                          color: Colors.white,
+                                          size: widget.removeIconSize ?? 14))),
                         )
                 ],
               );
@@ -277,7 +348,8 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
         decoration: const BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.only(topRight: Radius.circular(26), topLeft: Radius.circular(26)),
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(26), topLeft: Radius.circular(26)),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -294,8 +366,12 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                uploadType(icon: Icons.description_rounded, title: 'Document', index: 0),
-                uploadType(icon: Icons.camera_alt_rounded, title: 'Camera', index: 1),
+                uploadType(
+                    icon: Icons.description_rounded,
+                    title: 'Document',
+                    index: 0),
+                uploadType(
+                    icon: Icons.camera_alt_rounded, title: 'Camera', index: 1),
                 uploadType(icon: Icons.image, title: 'Gallery', index: 2),
               ],
             ),
@@ -304,7 +380,8 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
         ));
   }
 
-  Widget uploadType({required IconData icon, required String title, required int index}) {
+  Widget uploadType(
+      {required IconData icon, required String title, required int index}) {
     return GestureDetector(
       onTap: () async {
         switch (index) {
@@ -315,13 +392,24 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
                 bool isSubmitted = false;
 
                 var result = await pickFiles();
-                String fileType = result.files.first.path!.split('.').last.toString();
-                if ((fileType == FileTypeEnum.jpg.name || fileType == FileTypeEnum.jpeg.name || fileType == FileTypeEnum.png.name)) {
+                String fileType =
+                    result.files.first.path!.split('.').last.toString();
+                if ((fileType == FileTypeEnum.jpg.name ||
+                    fileType == FileTypeEnum.jpeg.name ||
+                    fileType == FileTypeEnum.png.name)) {
                   // isSubmitted = await Get.to(ImageView(path: File(result.files.first.path!)));
-                  isSubmitted = await Navigator.push(context, MaterialPageRoute(builder: (context) => ImageView(path: File(result.files.first.path!))));
+                  isSubmitted = await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              ImageView(path: File(result.files.first.path!))));
                 } else if (fileType == FileTypeEnum.pdf.name) {
                   // isSubmitted = await Get.to(() => PDFViewWidget(path: result.files.first.path!));
-                  isSubmitted = await Navigator.push(context, MaterialPageRoute(builder: (context) => PDFViewWidget(path: result.files.first.path!)));
+                  isSubmitted = await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              PDFViewWidget(path: result.files.first.path!)));
                 } else {
                   await OpenFile.open(result.files.first.path!);
                   isSubmitted = true;
@@ -330,7 +418,8 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
                 if (isSubmitted) {
                   setState(() {
                     List<File> selectedFiles = [];
-                    selectedFiles = result.paths.map((path) => File(path!)).toList();
+                    selectedFiles =
+                        result.paths.map((path) => File(path!)).toList();
                     selectedFiles.forEach((element) {
                       list.add(element);
                     });
@@ -349,7 +438,10 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
 
             var result = await getImage(true);
 
-            bool isSubmitted = await Navigator.push(context, MaterialPageRoute(builder: (context) => ImageView(path: File(result.path))));
+            bool isSubmitted = await Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ImageView(path: File(result.path))));
             //  Get.to(ImageView(
             //   path: File(result.path),
             // ));
@@ -373,7 +465,10 @@ class _SmartMediaPickerAndViewerState extends State<SmartMediaPickerAndViewer> {
             var result = await getImage(false);
 
             // bool isSubmitted = await Get.to(ImageView(path: File(result.path)));
-            bool isSubmitted = await Navigator.push(context, MaterialPageRoute(builder: (context) => ImageView(path: File(result.path))));
+            bool isSubmitted = await Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ImageView(path: File(result.path))));
 
             if (isSubmitted) {
               setState(() {

@@ -32,7 +32,12 @@ class _ImageSliderState extends State<ImageSlider> {
   @override
   void initState() {
     sortedImagesList = widget.sliderList
-        .where((element) => element.path.split(".").last.toString() == "png" || element.path.split(".").last.toString() == "jpg" || element.path.split(".").last.toString() == "jpeg")
+        .where(
+          (element) =>
+              element.path.split(".").last.toString() == "png" ||
+              element.path.split(".").last.toString() == "jpg" ||
+              element.path.split(".").last.toString() == "jpeg",
+        )
         .toList();
     super.initState();
   }
@@ -40,7 +45,8 @@ class _ImageSliderState extends State<ImageSlider> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * .2),
+      margin: EdgeInsets.symmetric(
+          vertical: MediaQuery.of(context).size.height * .2),
       child: CarouselSlider(
           carouselController: carouselController,
           options: CarouselOptions(
@@ -58,7 +64,11 @@ class _ImageSliderState extends State<ImageSlider> {
                     borderRadius: BorderRadius.circular(10),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => ImageView(path: item, isForSubmit: false)));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    ImageView(path: item, isForSubmit: false)));
                       },
                       child: Image.file(item, fit: BoxFit.fill),
                     ),

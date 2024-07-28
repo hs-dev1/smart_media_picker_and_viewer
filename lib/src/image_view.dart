@@ -43,7 +43,10 @@ class _ImageViewState extends State<ImageView> {
               onTap: () => Navigator.pop(context, true),
               child: const Icon(Icons.arrow_back_rounded, color: Colors.black),
             ),
-            title: Text(widget.path.path.split('/').last.substring(0, widget.path.path.split('/').last.lastIndexOf('.')), style: const TextStyle(color: Colors.black, fontSize: 14)),
+            title: Text(
+                widget.path.path.split('/').last.substring(
+                    0, widget.path.path.split('/').last.lastIndexOf('.')),
+                style: const TextStyle(color: Colors.black, fontSize: 14)),
           ),
           body: Column(
             children: [
@@ -51,7 +54,8 @@ class _ImageViewState extends State<ImageView> {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    image: DecorationImage(image: FileImage(widget.path), fit: BoxFit.cover),
+                    image: DecorationImage(
+                        image: FileImage(widget.path), fit: BoxFit.cover),
                   ),
                 ),
               ),
@@ -63,7 +67,8 @@ class _ImageViewState extends State<ImageView> {
                   height: MediaQuery.of(context).size.height * .07,
                   color: Colors.white,
                   width: MediaQuery.of(context).size.width,
-                  margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   child: AppButton(
                     buttonTitle: "Submit",
                     color: widget.buttonColor ?? Colors.teal.shade400,

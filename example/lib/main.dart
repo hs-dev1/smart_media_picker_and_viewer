@@ -69,8 +69,14 @@ class _PackageViewState extends State<PackageView> {
               isHideUploadButton: false,
               uploadButtonColor: Colors.blueGrey,
               // uploadButtonIcon: const Icon(Icons.upload, color: Colors.black),
-              uploadButtonTextStyle: const TextStyle(fontSize: 8, fontStyle: FontStyle.italic, color: Colors.blueGrey),
-              mediaTextStyle: const TextStyle(fontSize: 8, fontStyle: FontStyle.italic, color: Colors.blueGrey),
+              uploadButtonTextStyle: const TextStyle(
+                  fontSize: 8,
+                  fontStyle: FontStyle.italic,
+                  color: Colors.blueGrey),
+              mediaTextStyle: const TextStyle(
+                  fontSize: 8,
+                  fontStyle: FontStyle.italic,
+                  color: Colors.blueGrey),
               removeIconColor: Colors.red,
               removeIconSize: 20,
               // removeIcon: const Icon(Icons.cancel, color: Colors.red,size: 12,),
