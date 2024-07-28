@@ -12,25 +12,66 @@ import 'src/pdf_view_widget.dart';
 import 'src/utils.dart';
 import 'package:open_file/open_file.dart';
 
+/// A versatile Flutter widget for picking and viewing various media types,
+/// including images, PDFs, and other files.
+///
+/// This widget provides customizable options to enhance the media handling
+/// experience in your Flutter applications.
 class SmartMediaPickerAndViewer extends StatefulWidget {
-  List<File> list;
-  ValueSetter<dynamic> onSelect;
+  /// Creates a [SmartMediaPickerAndViewer] widget.
+  ///
+  /// The [list] parameter is required to specify the list of selected media files.
+  /// The [onSelect] callback is required to handle the selected media files.
+
+  /// The list of selected media files.
+  final List<File> list;
+
+  /// Callback for handling the selected media files.
+  final Function(List<File>) onSelect;
+
+  /// Whether to hide the upload button.
   final bool isHideUploadButton;
+
+  /// The color of the upload button.
   final Color? uploadButtonColor;
+
+  /// The text style of the upload button.
   final TextStyle? uploadButtonTextStyle;
-  final Widget? uploadButtonIcon;
-  final TextStyle? mediaTextStyle;
-  final Color? removeIconColor;
+
+  /// The icon for the upload button.
+  final Icon? uploadButtonIcon;
+
+  /// The widget for the Remove Icon.
   final Widget? removeIcon;
-  final double? buttonHeight;
-  final double? buttonWidth;
-  final double? mediaHeight;
-  final double? mediaWidth;
-  final double? buttonPadding;
+
+  /// The text style for media items.
+  final TextStyle? mediaTextStyle;
+
+  /// The color of the remove icon.
+  final Color? removeIconColor;
+
+  /// The size of the remove icon.
   final double? removeIconSize;
+
+  /// The height of the upload button.
+  final double? buttonHeight;
+
+  /// The width of the upload button.
+  final double? buttonWidth;
+
+  /// The padding around the upload button.
+  final double? buttonPadding;
+
+  /// The height of the media items.
+  final double? mediaHeight;
+
+  /// The width of the media items.
+  final double? mediaWidth;
+
+  /// The maximum number of lines for media names.
   final int? maxLinesForName;
 
-  SmartMediaPickerAndViewer({
+  const SmartMediaPickerAndViewer({
     Key? key,
     required this.list,
     this.isHideUploadButton = false,
