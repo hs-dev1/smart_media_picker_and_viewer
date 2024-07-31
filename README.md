@@ -13,6 +13,8 @@ A versatile Flutter package for seamlessly picking and viewing various media typ
 ## Screenshots
 
 ### Media Picker Example 1
+<img src="/assets/smart_media_picker_and_viewer1.jpg" alt="Media Picker Example 1" width="300"/>
+
 ![Media Picker Example 1](/assets/smart_media_picker_and_viewer1.jpg)
 
 ### Media Picker Example 2
