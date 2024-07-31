@@ -10,6 +10,21 @@ A versatile Flutter package for seamlessly picking and viewing various media typ
 - Customizable: Adjust styles, colors, and other UI elements to fit your application's design.
 - Flexible Supports: wide range of file types and provides various options for display and interations.
 
+## Screenshots
+
+### Media Picker Example 1
+![Media Picker Example 1](/assets/smart_media_picker_and_viewer1.jpg)
+
+### Media Picker Example 2
+![Media Picker Example 2](/assets/smart_media_picker_and_viewer2.jpg)
+
+### Media Viewer Example 1
+![Media Viewer Example 1](/assets/smart_media_picker_and_viewer3.jpg)
+
+### Media Viewer Example 2
+![Media Viewer Example 2](/assets/smart_media_picker_and_viewer4.jpg)
+
+
 ## Installation
 
 Add `smart_media_picker_and_viewer` to your `pubspec.yaml` file:

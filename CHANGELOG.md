@@ -1,6 +1,14 @@
 # Changelog
 
 
+## [0.0.3] - 2024-07-31
+### Fixed Issues and Improvements
+- **Documentation**: Improved package documentation to provide better guidance and usage examples.
+- **Code Formatting**: Formatted the code to follow Dart file conventions and improve readability.
+- **Static Analysis**: Addressed issues identified by static analysis tools to improve code quality and maintainability.
+- **Screenshots**: Added screenshots of the example to help developers understand and get ideas for implementation.
+
+
 
 ## [0.0.2] - 2024-07-27
 ### Fixed Issues and Improvements

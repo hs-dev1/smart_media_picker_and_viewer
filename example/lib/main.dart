@@ -54,9 +54,9 @@ class _PackageViewState extends State<PackageView> {
             )
           ],
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
+          // mainAxisSize: MainAxisSize.min,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
               "Upload Documents",
@@ -69,14 +69,8 @@ class _PackageViewState extends State<PackageView> {
               isHideUploadButton: false,
               uploadButtonColor: Colors.blueGrey,
               // uploadButtonIcon: const Icon(Icons.upload, color: Colors.black),
-              uploadButtonTextStyle: const TextStyle(
-                  fontSize: 8,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.blueGrey),
-              mediaTextStyle: const TextStyle(
-                  fontSize: 8,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.blueGrey),
+              uploadButtonTextStyle: const TextStyle(fontSize: 8, fontStyle: FontStyle.italic, color: Colors.blueGrey),
+              mediaTextStyle: const TextStyle(fontSize: 8, fontStyle: FontStyle.italic, color: Colors.blueGrey),
               removeIconColor: Colors.red,
               removeIconSize: 20,
               // removeIcon: const Icon(Icons.cancel, color: Colors.red,size: 12,),
@@ -90,9 +84,9 @@ class _PackageViewState extends State<PackageView> {
                 documentList = list;
               },
             ),
-            const Divider(),
+            const Divider(height: 50),
             const Text(
-              "here you can pass your doc list and view",
+              "here you can pass your docs and view",
               textAlign: TextAlign.start,
               style: TextStyle(color: Colors.black, fontSize: 15, height: 1.2),
             ),
@@ -105,17 +99,6 @@ class _PackageViewState extends State<PackageView> {
             SmartMediaPickerAndViewer(
               list: bankStatementList,
               isHideUploadButton: true,
-              // uploadButtonColor: Colors.blueGrey,
-              // // uploadButtonIcon: const Icon(Icons.upload, color: Colors.black),
-              // uploadButtonTextStyle: const TextStyle(fontSize: 8, fontStyle: FontStyle.italic, color: Colors.blueGrey),
-              // mediaTextStyle: const TextStyle(fontSize: 8, fontStyle: FontStyle.italic, color: Colors.blueGrey),
-              // removeIconColor: Colors.red,
-              // removeIconSize: 20,
-              // // removeIcon: const Icon(Icons.cancel, color: Colors.red,size: 12,),
-              // // removeIconPositionLR8(tb):
-              // buttonHeight: 80,
-              // buttonWidth: 60,
-              // buttonPadding: 0,
               mediaHeight: 80,
               mediaWidth: 60,
               maxLinesForName: 3,
