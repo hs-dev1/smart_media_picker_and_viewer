@@ -1,7 +1,7 @@
 # Changelog
 
 
-## [0.0.4] - 2024-07-31
+## [0.0.5] - 2024-08-04
 ### Fixed Screenshots Added Fixed
 - **Screenshots**: Fixed screenshots of the example to help developers understand and get ideas for implementation.
 

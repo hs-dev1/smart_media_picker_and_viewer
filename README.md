@@ -13,16 +13,16 @@ A versatile Flutter package for seamlessly picking and viewing various media typ
 ## Screenshots
 
 ### Media Picker Example
-<img src="https://github.com/hs-dev1/smart_media_picker_and_viewer/blob/main/assets/smart_media_picker_and_viewer1.jpg" alt="Media Picker Example 1" width="300"/>
+<img src="https://raw.githubusercontent.com/hs-dev1/smart_media_picker_and_viewer/main/assets/smart_media_picker_and_viewer1.jpg" alt="Media Picker Example 1" width="300"/>
 
 ### Media Picker Example
-<img src="https://github.com/hs-dev1/smart_media_picker_and_viewer/blob/main/assets/smart_media_picker_and_viewer2.jpg" alt="Media Picker Example 2" width="300"/>
+<img src="https://raw.githubusercontent.com/hs-dev1/smart_media_picker_and_viewer/main/assets/smart_media_picker_and_viewer2.jpg" alt="Media Picker Example 2" width="300"/>
 
 ### Media Viewer Example
-<img src="https://github.com/hs-dev1/smart_media_picker_and_viewer/blob/main/assets/smart_media_picker_and_viewer3.jpg" alt="Media Picker Example 3" width="300"/>
+<img src="https://raw.githubusercontent.com/hs-dev1/smart_media_picker_and_viewer/main/assets/smart_media_picker_and_viewer3.jpg" alt="Media Picker Example 3" width="300"/>
 
 ### Media Viewer Example
-<img src="https://github.com/hs-dev1/smart_media_picker_and_viewer/blob/main/assets/smart_media_picker_and_viewer4.jpg" alt="Media Picker Example 4" width="300"/>
+<img src="https://raw.githubusercontent.com/hs-dev1/smart_media_picker_and_viewer/main/assets/smart_media_picker_and_viewer4.jpg" alt="Media Picker Example 4" width="300"/>
 
 
 ## Installation
