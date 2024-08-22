@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.0.6] - 2024-08-22
+### Improvements
+- **Dependency Updates:**
+  - Updated `file_picker` to version 8.1.2.
+  - Updated `carousel_slider` to version 5.0.0 to ensure compatibility with the latest stable version.
+
+- **Static Analysis:**
+  - Resolved naming conflict between `CarouselController` from `carousel_slider` and `flutter/material` by implementing import aliases.
+  - Fixed all identified static analysis issues, ensuring clean code without errors, warnings, lints, or formatting issues.
+
+
 
 ## [0.0.5] - 2024-08-04
 ### Fixed Screenshots Added Fixed
